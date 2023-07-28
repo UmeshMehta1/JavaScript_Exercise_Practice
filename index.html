@@ -1,21 +1,45 @@
+<!-- Write a JavaScript program to convert temperatures to and from Celsius, Fahrenheit.  
+[ Formula : c/5 = (f-32)/9 [ where c = temperature in Celsius and f = temperature in Fahrenheit ]
+Expected Output :
+60°C is 140 °F
+45°F is 7.222222222222222°C -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Basic Handwritten practice</title>
-    <style src="style.css"></style>
+    <title>Document</title>
   </head>
   <body>
-    <!-- <button type="button" onclick="btn1()">Click Me</button> -->
-    <!-- <script src="practice.js"></script> -->
-    <!-- <script src="objects.js"></script> -->
-    <!-- <script src="loop_practice.js"></script> -->
-    <!-- <script src="reac_training.js"></script> -->
-    <!-- <script src="date.js"></script> -->
-    <!-- <script src="AreaOfTriangle.js"></script> -->
-    <!-- <script src="find_Date.js"></script> -->
-    <script src="random_Num.js"></script>
+    <h1>Celsius to Fahrenheit and Fahrenheit to Celsius</h1>
+    <input type="text" id="temperature" />
+    <input type="button" onclick="cToF()" value="C To F" />
+    <input type="button" onclick="fToC()" value="F To C" />
+
+    <p>
+      The Result is:
+      <bold id="result"></bold>
+    </p>
+    <script src="findExtension.js"></script>
+
+    <script>
+      //Celcus to Fahrenhite convert
+      function cToF() {
+        var celsius = parseFloat(document.getElementById('temperature').value);
+        var fahrenheit = (celsius * 9) / 5 + 32;
+        document.getElementById('result').textContent = fahrenheit + '\xB0F';
+      }
+
+      //fahrenheit To Celcus Convert
+      fToC = () => {
+        let fahrenheit = parseFloat(
+          document.getElementById('temperature').value
+        );
+        let celcus = (5 * (fahrenheit - 32)) / 9;
+        document.getElementById('result').innerHTML =
+          celcus.toFixed(2) + '\xB0C';
+      };
+    </script>
   </body>
 </html>
